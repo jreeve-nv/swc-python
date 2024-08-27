@@ -1,7 +1,8 @@
+import sys
 import pandas
 import matplotlib.pyplot as plt
 
-filename = 'data/gapminder_gdp_oceania.csv'
+filename = sys.argv[1]
 
 data = pandas.read_csv(filename, index_col = 'country').T
 
