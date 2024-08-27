@@ -3,6 +3,13 @@ import pandas
 import matplotlib.pyplot as plt
 import glob
 
+if len(sys.argv) == 1:
+    print("Not enough arguments have been provided")
+    print("Usage: python gdp_plots.py < filenames >")
+    print("Options:")
+    print("-a: plot all gdp data sets in current directory")
+
+
 if "-a" in sys.argv:
     filenames = glob.glob("data/*gdp*.csv")
 else:
