@@ -9,9 +9,11 @@ if len(sys.argv) == 1:
     print("Options:")
     print("-a: plot all gdp data sets in current directory")
 
-
 if "-a" in sys.argv:
     filenames = glob.glob("data/*gdp*.csv")
+    if filenames == []:
+        print("No files found in this folder.")
+        print("Make sure data is located in current directory.")
 else:
     filenames = sys.argv[1:]
 
