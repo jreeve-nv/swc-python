@@ -1,8 +1,14 @@
 import sys
 import pandas
 import matplotlib.pyplot as plt
+import glob
 
-for filename in sys.argv[1:]:
+if "-a" in sys.argv:
+    filenames = glob.glob("data/*gdp*.csv")
+else:
+    filenames = sys.argv[1:]
+
+for filename in filenames:
 
     data = pandas.read_csv(filename, index_col = 'country').T
     split_name1 = filename.split('.')[0]
